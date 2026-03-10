@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimas Cafe & Eatery</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome untuk Ikon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-coffee {
+            background-color: #4b3621;
+        }
+        .text-coffee {
+            color: #4b3621;
+        }
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .menu-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .menu-img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+        .menu-img-container img {
+            transition: transform 0.5s ease;
+        }
+        .menu-card:hover .menu-img-container img {
+            transform: scale(1.1);
+        }
+        .logo-shadow {
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Navigasi -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133945_fdd353bd.jpeg" alt="Logo Dimas Cafe" class="w-12 h-12 rounded-full object-cover border-2 border-coffee logo-shadow">
+                <h1 class="text-xl font-serif font-bold tracking-wider text-coffee uppercase">DIMAS</h1>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium text-sm lg:text-base">
+                <a href="#home" class="hover:text-amber-800 transition">Beranda</a>
+                <a href="#about" class="hover:text-amber-800 transition">Tentang</a>
+                <a href="#menu" class="hover:text-amber-800 transition">Menu Spesial</a>
+                <a href="#contact" class="hover:text-amber-800 transition">Kontak</a>
+            </div>
+            <a href="https://wa.me/6285171126833" class="bg-coffee text-white px-6 py-2 rounded-full hover:bg-black transition text-sm font-semibold tracking-wide shadow-lg">Pesan Sekarang</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-center text-white">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2070" alt="Suasana Cafe Dimas" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        <div class="relative z-10 px-4">
+            <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133945_fdd353bd.jpeg" alt="Logo Dimas" class="w-24 h-24 rounded-full mx-auto mb-6 border-4 border-white/20 shadow-2xl">
+            <h2 class="text-sm md:text-lg uppercase tracking-[0.3em] mb-4 text-amber-200">Rasa yang Sempurna</h2>
+            <h1 class="text-5xl md:text-8xl font-serif font-bold mb-6 text-white text-shadow-lg">Dimas Cafe & Eatery</h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light opacity-90 leading-relaxed text-white">
+                Nikmati hidangan pilihan dengan cita rasa istimewa di suasana yang hangat dan nyaman.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#menu" class="bg-amber-50 text-coffee px-10 py-4 rounded-full font-bold hover:bg-white transition-all shadow-xl">Jelajahi Menu</a>
+                <a href="#contact" class="border border-white/40 bg-white/10 backdrop-blur-sm px-10 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-all text-white">Lokasi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Section -->
+    <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-coffee opacity-20"></div>
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1000" alt="Filosofi Dimas Cafe" class="rounded-2xl shadow-2xl relative z-10">
+                <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-coffee opacity-20"></div>
+            </div>
+            <div>
+                <span class="text-coffee font-bold tracking-widest text-sm uppercase">Tentang Kami</span>
+                <h3 class="font-serif text-4xl md:text-5xl font-bold mt-2 mb-6">Cerita di Balik Rasa</h3>
+                <p class="text-gray-600 leading-relaxed mb-8 text-lg text-justify">
+                    Terletak di Desa Sumbermulya, Dimas Cafe & Eatery menghadirkan konsep kuliner yang memadukan kenyamanan rumah dengan standar rasa restoran premium. Setiap hidangan diproses dengan teliti menggunakan bahan berkualitas untuk memastikan kepuasan Anda.
+                </p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-coffee text-xl">Mulai 20rb</h4>
+                        <p class="text-sm text-gray-500">Harga bersahabat dengan kualitas rasa bintang lima.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-coffee text-xl">Bahan Segar</h4>
+                        <p class="text-sm text-gray-500">Hanya menggunakan bahan baku pilihan setiap harinya.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 bg-gray-50 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="text-amber-700 font-bold tracking-widest text-sm uppercase">Daftar Menu</span>
+            <h2 class="font-serif text-4xl md:text-5xl font-bold mt-2 mb-4">Favorit Pelanggan</h2>
+            <p class="text-gray-500 max-w-xl mx-auto mb-16 italic text-sm md:text-base">Pilihan hidangan spesial yang paling banyak dicari oleh para pengunjung kami.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 text-left">
+                <!-- Menu Item 1: Paket Santai Kopi & Kue -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm menu-card">
+                    <div class="menu-img-container h-56 mb-4">
+                        <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133673_ff73c50c.jpeg" alt="Paket Santai Kopi & Kue" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg mb-1 leading-tight">Paket Santai Kopi & Kue</h4>
+                    <p class="text-xs text-gray-500 mb-3">Nikmati momen tenang Anda dengan kombinasi kopi hangat dan sepotong kue lezat.</p>
+                    <div class="flex justify-between items-center border-t pt-3">
+                        <span class="text-coffee font-bold text-lg">Rp 35.000</span>
+                        <span class="bg-gray-100 p-2 rounded-full cursor-pointer hover:bg-amber-100 transition"><i class="fas fa-plus text-xs"></i></span>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2: Special Heart Capucino -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm menu-card">
+                    <div class="menu-img-container h-56 mb-4">
+                        <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133663_a9aaafc1.jpeg" alt="Special Heart Capucino" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg mb-1 leading-tight">Special Heart Capucino</h4>
+                    <p class="text-xs text-gray-500 mb-3">Sajian kopi capucino dengan latte art bentuk hati yang dibuat dengan cinta.</p>
+                    <div class="flex justify-between items-center border-t pt-3">
+                        <span class="text-coffee font-bold text-lg">Rp 25.000</span>
+                        <span class="bg-gray-100 p-2 rounded-full cursor-pointer hover:bg-amber-100 transition"><i class="fas fa-plus text-xs"></i></span>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3: Grilled Waffle -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm menu-card">
+                    <div class="menu-img-container h-56 mb-4">
+                        <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133646_a71a0fda.jpeg" alt="Grilled Waffle" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg mb-1 leading-tight">Grilled Waffle</h4>
+                    <p class="text-xs text-gray-500 mb-3">Wafel panggang renyah di luar dan lembut di dalam dengan topping pilihan.</p>
+                    <div class="flex justify-between items-center border-t pt-3">
+                        <span class="text-coffee font-bold text-lg">Rp 22.000</span>
+                        <span class="bg-gray-100 p-2 rounded-full cursor-pointer hover:bg-amber-100 transition"><i class="fas fa-plus text-xs"></i></span>
+                    </div>
+                </div>
+
+                <!-- Menu Item 4: Classic Tiramisu -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm menu-card">
+                    <div class="menu-img-container h-56 mb-4">
+                        <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133635_11c9c6de.jpeg" alt="Classic Tiramisu" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg mb-1 leading-tight">Classic Tiramisu</h4>
+                    <p class="text-xs text-gray-500 mb-3 text-justify">Dessert klasik Italia dengan lapisan krim mascarpone dan aroma kopi yang kuat.</p>
+                    <div class="flex justify-between items-center border-t pt-3">
+                        <span class="text-coffee font-bold text-lg">Rp 28.000</span>
+                        <span class="bg-gray-100 p-2 rounded-full cursor-pointer hover:bg-amber-100 transition"><i class="fas fa-plus text-xs"></i></span>
+                    </div>
+                </div>
+
+                <!-- Menu Item 5: Iced Hazelnut Caramel Coffee -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm menu-card">
+                    <div class="menu-img-container h-56 mb-4">
+                        <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133619_005f4bd9.jpeg" alt="Iced Hazelnut Caramel Coffee" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg mb-1 leading-tight">Iced Hazelnut Caramel Coffee</h4>
+                    <p class="text-xs text-gray-500 mb-3">Kopi dingin premium dengan sentuhan hazelnut gurih dan saus karamel manis.</p>
+                    <div class="flex justify-between items-center border-t pt-3">
+                        <span class="text-coffee font-bold text-lg">Rp 28.000</span>
+                        <span class="bg-gray-100 p-2 rounded-full cursor-pointer hover:bg-amber-100 transition"><i class="fas fa-plus text-xs"></i></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 inline-block bg-coffee text-white px-8 py-3 rounded-xl shadow-md">
+                <p class="text-sm font-medium">Lihat Menu Lainnya di Toko | Mulai <span class="text-amber-400 font-bold">Rp 20.000</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak & Lokasi Section -->
+    <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <div>
+                <span class="text-coffee font-bold tracking-widest text-sm uppercase">Hubungi Kami</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mt-2 mb-10">Datang & Nikmati</h2>
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-5">
+                        <div class="bg-amber-100 p-4 rounded-2xl text-coffee">
+                            <i class="fas fa-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-1">Alamat Utama</h4>
+                            <p class="text-gray-600 leading-relaxed">Desa Sumbermulya, Jl. Jatimulya</p>
+                            <p class="text-gray-500 text-sm">Cikarang, Bekasi, Jawa Barat</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-5">
+                        <div class="bg-amber-100 p-4 rounded-2xl text-coffee">
+                            <i class="fas fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-1">Telepon & Reservasi</h4>
+                            <a href="tel:+6285171126833" class="text-gray-600 text-lg hover:text-coffee transition">+62 851-7112-6833</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-5">
+                        <div class="bg-amber-100 p-4 rounded-2xl text-coffee">
+                            <i class="fas fa-clock text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl mb-1">Jam Operasional</h4>
+                            <p class="text-gray-600">Buka Setiap Hari: <span class="font-semibold text-gray-800">10:00 - 22:00 WIB</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/6285171126833" target="_blank" class="inline-flex items-center justify-center bg-[#25D366] text-white px-8 py-4 rounded-2xl hover:brightness-110 transition shadow-lg font-bold">
+                        <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                        Chat via WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="rounded-3xl overflow-hidden shadow-2xl border-8 border-gray-50 h-[500px]">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126895.82522774358!2d107.2519575456209!3d-6.329972352827725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699ca092a95c47%3A0x6291a92e160a09e0!2sJatimulya%2C%20Kec.%20Cikarang%20Sel.%2C%20Bekasi%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1700000000000" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a120b] text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left items-center">
+            <div>
+                <div class="flex items-center justify-center md:justify-start space-x-4 mb-4">
+                    <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133945_fdd353bd.jpeg" alt="Logo Dimas" class="w-16 h-16 rounded-full object-cover border-2 border-amber-800">
+                    <h2 class="text-3xl font-serif font-bold tracking-tighter text-white uppercase">DIMAS</h2>
+                </div>
+                <p class="text-gray-400 leading-relaxed mb-6">Menyajikan kenyamanan dan rasa terbaik untuk setiap pelanggan kami di Desa Sumbermulya.</p>
+                <div class="flex justify-center md:justify-start space-x-5 text-xl">
+                    <a href="#" class="w-10 h-10 bg-white/5 flex items-center justify-center rounded-full hover:bg-amber-700 transition"><i class="fab fa-instagram text-white text-sm"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/5 flex items-center justify-center rounded-full hover:bg-amber-700 transition"><i class="fab fa-facebook-f text-white text-xs"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/5 flex items-center justify-center rounded-full hover:bg-amber-700 transition"><i class="fab fa-tiktok text-white text-xs"></i></a>
+                </div>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <h4 class="font-bold text-lg mb-2 text-white">Tautan Cepat</h4>
+                <a href="#home" class="text-gray-400 hover:text-white transition">Beranda</a>
+                <a href="#about" class="text-gray-400 hover:text-white transition">Tentang Kami</a>
+                <a href="#menu" class="text-gray-400 hover:text-white transition">Menu Pilihan</a>
+                <a href="#contact" class="text-gray-400 hover:text-white transition">Lokasi</a>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4 text-white">Berlangganan Promo</h4>
+                <p class="text-sm text-gray-400 mb-4">Dapatkan info menu baru dan diskon khusus melalui email.</p>
+                <div class="flex overflow-hidden rounded-xl shadow-lg">
+                    <input type="email" placeholder="Email Anda" class="bg-white/10 px-4 py-3 outline-none flex-grow text-sm text-white">
+                    <button class="bg-coffee px-6 py-3 font-bold hover:bg-amber-900 transition text-sm text-white border-none cursor-pointer">Kirim</button>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/5 max-w-7xl mx-auto mt-16 pt-8 text-center text-gray-500 text-xs tracking-widest uppercase">
+            &copy; 2024 DIMAS CAFE & EATERY | <span class="text-gray-400 text-xs">SUMBERMULYA, JATIMULYA</span>
+        </div>
+    </footer>
+
+</body>
+              </html>
