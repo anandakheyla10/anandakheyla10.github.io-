@@ -3,292 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dimas Cafe & Eatery</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Dimas Rayhan | Portofolio Budaya</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome untuk Ikon -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk ikon sosial media -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --culture-gold: #C5A059;
+            --culture-dark: #1A1A1A;
+            --culture-cream: #F9F6F0;
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--culture-cream);
+            color: var(--culture-dark);
             scroll-behavior: smooth;
         }
-        .font-serif {
+
+        h1, h2, h3, .font-serif {
             font-family: 'Playfair Display', serif;
         }
-        .bg-coffee {
-            background-color: #4b3621;
+
+        .bg-culture {
+            background-color: var(--culture-cream);
+            background-image: url("https://www.transparenttextures.com/patterns/batik-fractal.png");
         }
-        .text-coffee {
-            color: #4b3621;
+
+        .text-gold { color: var(--culture-gold); }
+        .bg-gold { background-color: var(--culture-gold); }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
-        .hero-overlay {
-            background: rgba(0, 0, 0, 0.7);
-        }
-        .menu-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .menu-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .menu-img-container {
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--culture-cream); }
+        ::-webkit-scrollbar-thumb { background: var(--culture-gold); border-radius: 10px; }
+
+        .nav-link {
             position: relative;
-            overflow: hidden;
-            border-radius: 0.75rem;
         }
-        .menu-img-container img {
-            transition: transform 0.5s ease;
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--culture-gold);
+            transition: width 0.3s;
         }
-        .menu-card:hover .menu-img-container img {
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .profile-frame {
+            border-radius: 160px 160px 20px 20px;
+            box-shadow: 0 20px 40px rgba(197, 160, 89, 0.2);
+        }
+        
+        .social-btn {
+            transition: all 0.3s ease;
+        }
+        .social-btn:hover {
             transform: scale(1.1);
-        }
-        .logo-shadow {
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-culture">
 
     <!-- Navigasi -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133945_fdd353bd.jpeg" alt="Logo Dimas Cafe" class="w-12 h-12 rounded-full object-cover border-2 border-coffee logo-shadow">
-                <h1 class="text-xl font-serif font-bold tracking-wider text-coffee uppercase">DIMAS</h1>
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gold/20">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-serif font-bold text-gold tracking-widest uppercase">Dimas.R</div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wider items-center">
+                <a href="#home" class="nav-link">BERANDA</a>
+                <a href="#about" class="nav-link">TENTANG</a>
+                <a href="#education" class="nav-link">PENDIDIKAN</a>
+                <a href="#contact" class="nav-link">KONTAK</a>
+                <div class="h-4 w-px bg-gray-300 mx-2"></div>
+                <a href="https://instagram.com/dimasrayhan38" target="_blank" class="text-gray-600 hover:text-gold transition-colors">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
             </div>
-            <div class="hidden md:flex space-x-8 font-medium text-sm lg:text-base">
-                <a href="#home" class="hover:text-amber-800 transition">Beranda</a>
-                <a href="#about" class="hover:text-amber-800 transition">Tentang</a>
-                <a href="#menu" class="hover:text-amber-800 transition">Menu Spesial</a>
-                <a href="#contact" class="hover:text-amber-800 transition">Kontak</a>
-            </div>
-            <a href="https://wa.me/6285171126833" class="bg-coffee text-white px-6 py-2 rounded-full hover:bg-black transition text-sm font-semibold tracking-wide shadow-lg">Pesan Sekarang</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center text-center text-white">
-        <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2070" alt="Suasana Cafe Dimas" class="w-full h-full object-cover">
-            <div class="absolute inset-0 hero-overlay"></div>
-        </div>
-        <div class="relative z-10 px-4">
-            <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133945_fdd353bd.jpeg" alt="Logo Dimas" class="w-24 h-24 rounded-full mx-auto mb-6 border-4 border-white/20 shadow-2xl">
-            <h2 class="text-sm md:text-lg uppercase tracking-[0.3em] mb-4 text-amber-200">Rasa yang Sempurna</h2>
-            <h1 class="text-5xl md:text-8xl font-serif font-bold mb-6 text-white text-shadow-lg">Dimas Cafe & Eatery</h1>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light opacity-90 leading-relaxed text-white">
-                Nikmati hidangan pilihan dengan cita rasa istimewa di suasana yang hangat dan nyaman.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#menu" class="bg-amber-50 text-coffee px-10 py-4 rounded-full font-bold hover:bg-white transition-all shadow-xl">Jelajahi Menu</a>
-                <a href="#contact" class="border border-white/40 bg-white/10 backdrop-blur-sm px-10 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-all text-white">Lokasi Kami</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tentang Section -->
-    <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="relative">
-                <div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-coffee opacity-20"></div>
-                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=1000" alt="Filosofi Dimas Cafe" class="rounded-2xl shadow-2xl relative z-10">
-                <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-coffee opacity-20"></div>
-            </div>
-            <div>
-                <span class="text-coffee font-bold tracking-widest text-sm uppercase">Tentang Kami</span>
-                <h3 class="font-serif text-4xl md:text-5xl font-bold mt-2 mb-6">Cerita di Balik Rasa</h3>
-                <p class="text-gray-600 leading-relaxed mb-8 text-lg text-justify">
-                    Terletak di Desa Sumbermulya, Dimas Cafe & Eatery menghadirkan konsep kuliner yang memadukan kenyamanan rumah dengan standar rasa restoran premium. Setiap hidangan diproses dengan teliti menggunakan bahan berkualitas untuk memastikan kepuasan Anda.
-                </p>
-                <div class="grid grid-cols-2 gap-8">
-                    <div class="space-y-2">
-                        <h4 class="font-bold text-coffee text-xl">Mulai 20rb</h4>
-                        <p class="text-sm text-gray-500">Harga bersahabat dengan kualitas rasa bintang lima.</p>
-                    </div>
-                    <div class="space-y-2">
-                        <h4 class="font-bold text-coffee text-xl">Bahan Segar</h4>
-                        <p class="text-sm text-gray-500">Hanya menggunakan bahan baku pilihan setiap harinya.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section id="menu" class="py-24 bg-gray-50 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <span class="text-amber-700 font-bold tracking-widest text-sm uppercase">Daftar Menu</span>
-            <h2 class="font-serif text-4xl md:text-5xl font-bold mt-2 mb-4">Favorit Pelanggan</h2>
-            <p class="text-gray-500 max-w-xl mx-auto mb-16 italic text-sm md:text-base">Pilihan hidangan spesial yang paling banyak dicari oleh para pengunjung kami.</p>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 text-left">
-                <!-- Menu Item 1: Paket Santai Kopi & Kue -->
-                <div class="bg-white p-4 rounded-2xl shadow-sm menu-card">
-                    <div class="menu-img-container h-56 mb-4">
-                        <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133673_ff73c50c.jpeg" alt="Paket Santai Kopi & Kue" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font-bold text-lg mb-1 leading-tight">Paket Santai Kopi & Kue</h4>
-                    <p class="text-xs text-gray-500 mb-3">Nikmati momen tenang Anda dengan kombinasi kopi hangat dan sepotong kue lezat.</p>
-                    <div class="flex justify-between items-center border-t pt-3">
-                        <span class="text-coffee font-bold text-lg">Rp 35.000</span>
-                        <span class="bg-gray-100 p-2 rounded-full cursor-pointer hover:bg-amber-100 transition"><i class="fas fa-plus text-xs"></i></span>
-                    </div>
-                </div>
-
-                <!-- Menu Item 2: Special Heart Capucino -->
-                <div class="bg-white p-4 rounded-2xl shadow-sm menu-card">
-                    <div class="menu-img-container h-56 mb-4">
-                        <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133663_a9aaafc1.jpeg" alt="Special Heart Capucino" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font-bold text-lg mb-1 leading-tight">Special Heart Capucino</h4>
-                    <p class="text-xs text-gray-500 mb-3">Sajian kopi capucino dengan latte art bentuk hati yang dibuat dengan cinta.</p>
-                    <div class="flex justify-between items-center border-t pt-3">
-                        <span class="text-coffee font-bold text-lg">Rp 25.000</span>
-                        <span class="bg-gray-100 p-2 rounded-full cursor-pointer hover:bg-amber-100 transition"><i class="fas fa-plus text-xs"></i></span>
-                    </div>
-                </div>
-
-                <!-- Menu Item 3: Grilled Waffle -->
-                <div class="bg-white p-4 rounded-2xl shadow-sm menu-card">
-                    <div class="menu-img-container h-56 mb-4">
-                        <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133646_a71a0fda.jpeg" alt="Grilled Waffle" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font-bold text-lg mb-1 leading-tight">Grilled Waffle</h4>
-                    <p class="text-xs text-gray-500 mb-3">Wafel panggang renyah di luar dan lembut di dalam dengan topping pilihan.</p>
-                    <div class="flex justify-between items-center border-t pt-3">
-                        <span class="text-coffee font-bold text-lg">Rp 22.000</span>
-                        <span class="bg-gray-100 p-2 rounded-full cursor-pointer hover:bg-amber-100 transition"><i class="fas fa-plus text-xs"></i></span>
-                    </div>
-                </div>
-
-                <!-- Menu Item 4: Classic Tiramisu -->
-                <div class="bg-white p-4 rounded-2xl shadow-sm menu-card">
-                    <div class="menu-img-container h-56 mb-4">
-                        <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133635_11c9c6de.jpeg" alt="Classic Tiramisu" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font-bold text-lg mb-1 leading-tight">Classic Tiramisu</h4>
-                    <p class="text-xs text-gray-500 mb-3 text-justify">Dessert klasik Italia dengan lapisan krim mascarpone dan aroma kopi yang kuat.</p>
-                    <div class="flex justify-between items-center border-t pt-3">
-                        <span class="text-coffee font-bold text-lg">Rp 28.000</span>
-                        <span class="bg-gray-100 p-2 rounded-full cursor-pointer hover:bg-amber-100 transition"><i class="fas fa-plus text-xs"></i></span>
-                    </div>
-                </div>
-
-                <!-- Menu Item 5: Iced Hazelnut Caramel Coffee -->
-                <div class="bg-white p-4 rounded-2xl shadow-sm menu-card">
-                    <div class="menu-img-container h-56 mb-4">
-                        <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133619_005f4bd9.jpeg" alt="Iced Hazelnut Caramel Coffee" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font-bold text-lg mb-1 leading-tight">Iced Hazelnut Caramel Coffee</h4>
-                    <p class="text-xs text-gray-500 mb-3">Kopi dingin premium dengan sentuhan hazelnut gurih dan saus karamel manis.</p>
-                    <div class="flex justify-between items-center border-t pt-3">
-                        <span class="text-coffee font-bold text-lg">Rp 28.000</span>
-                        <span class="bg-gray-100 p-2 rounded-full cursor-pointer hover:bg-amber-100 transition"><i class="fas fa-plus text-xs"></i></span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-16 inline-block bg-coffee text-white px-8 py-3 rounded-xl shadow-md">
-                <p class="text-sm font-medium">Lihat Menu Lainnya di Toko | Mulai <span class="text-amber-400 font-bold">Rp 20.000</span></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Kontak & Lokasi Section -->
-    <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-16">
-            <div>
-                <span class="text-coffee font-bold tracking-widest text-sm uppercase">Hubungi Kami</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-bold mt-2 mb-10">Datang & Nikmati</h2>
-                <div class="space-y-8">
-                    <div class="flex items-start space-x-5">
-                        <div class="bg-amber-100 p-4 rounded-2xl text-coffee">
-                            <i class="fas fa-location-dot text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-xl mb-1">Alamat Utama</h4>
-                            <p class="text-gray-600 leading-relaxed">Desa Sumbermulya, Jl. Jatimulya</p>
-                            <p class="text-gray-500 text-sm">Cikarang, Bekasi, Jawa Barat</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start space-x-5">
-                        <div class="bg-amber-100 p-4 rounded-2xl text-coffee">
-                            <i class="fas fa-phone text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-xl mb-1">Telepon & Reservasi</h4>
-                            <a href="tel:+6285171126833" class="text-gray-600 text-lg hover:text-coffee transition">+62 851-7112-6833</a>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start space-x-5">
-                        <div class="bg-amber-100 p-4 rounded-2xl text-coffee">
-                            <i class="fas fa-clock text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-xl mb-1">Jam Operasional</h4>
-                            <p class="text-gray-600">Buka Setiap Hari: <span class="font-semibold text-gray-800">10:00 - 22:00 WIB</span></p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-12 flex flex-col sm:flex-row gap-4">
-                    <a href="https://wa.me/6285171126833" target="_blank" class="inline-flex items-center justify-center bg-[#25D366] text-white px-8 py-4 rounded-2xl hover:brightness-110 transition shadow-lg font-bold">
-                        <i class="fab fa-whatsapp mr-3 text-2xl"></i>
-                        Chat via WhatsApp
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="animate-fade order-2 md:order-1 text-center md:text-left">
+                <span class="text-gold font-semibold tracking-widest uppercase block mb-4 italic">— Profil Dimas Rayhan</span>
+                <h1 class="text-5xl md:text-8xl font-bold leading-tight mb-6">Dimas<br><span class="text-gold">Rayhan</span></h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-md mx-auto md:mx-0">Menyeimbangkan tradisi dan teknologi. Siswa Teknik Sepeda Motor dengan semangat inovasi dan cinta terhadap budaya.</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#about" class="bg-gold text-white px-8 py-4 rounded-full inline-block hover:bg-black transition-all duration-300 shadow-lg">Jelajahi Profil</a>
+                    <a href="https://wa.me/6285171126833" target="_blank" class="bg-white border border-gold text-gold px-8 py-4 rounded-full inline-block hover:bg-gold hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fab fa-whatsapp mr-2"></i>Hubungi WA
                     </a>
                 </div>
             </div>
+            <div class="relative flex justify-center animate-fade order-1 md:order-2" style="animation-delay: 0.3s;">
+                <div class="w-72 h-[420px] md:w-[380px] md:h-[520px] profile-frame overflow-hidden border-8 border-white shadow-2xl relative z-10 bg-gray-200">
+                    <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410004/1773131993_f869762c.jpg" alt="Dimas Rayhan" class="w-full h-full object-cover">
+                </div>
+                <!-- Ornamen Budaya -->
+                <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-gold/10 rounded-full blur-3xl -z-10"></div>
+                <div class="absolute -top-6 -left-6 w-32 h-32 border-2 border-gold/30 rounded-full -z-10"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Tentang -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8">Tentang Saya</h2>
+            <div class="w-20 h-1 bg-gold mx-auto mb-8"></div>
+            <p class="text-xl leading-relaxed text-gray-700 italic font-serif">
+                "Kecintaan terhadap mesin adalah bentuk seni modern, namun akar budaya adalah identitas yang tak tergantikan."
+            </p>
+            <p class="mt-6 text-gray-600">
+                Saya adalah seorang pelajar yang berdedikasi di SMK Al Irsyad Al Islamiyyah dengan konsentrasi Teknik Sepeda Motor. Saya percaya bahwa ketelitian teknis yang dipelajari di bengkel sama pentingnya dengan nilai-nilai kesantunan dan kedisiplinan yang diajarkan oleh latar belakang pendidikan saya yang kental akan budaya.
+            </p>
+        </div>
+    </section>
+
+    <!-- Timeline Pendidikan -->
+    <section id="education" class="py-24 px-6 max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold mb-16 text-center">Riwayat Pendidikan</h2>
+        
+        <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 md:before:mx-auto before:w-0.5 before:bg-gold/30">
             
-            <div class="rounded-3xl overflow-hidden shadow-2xl border-8 border-gray-50 h-[500px]">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126895.82522774358!2d107.2519575456209!3d-6.329972352827725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699ca092a95c47%3A0x6291a92e160a09e0!2sJatimulya%2C%20Kec.%20Cikarang%20Sel.%2C%20Bekasi%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1700000000000" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
+            <!-- SMK -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gold text-white z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg">
+                    <i class="fas fa-motorcycle text-sm"></i>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 bg-white rounded-2xl shadow-sm border-l-4 border-gold card-hover">
+                    <span class="text-gold font-bold text-sm">2023 — 2026</span>
+                    <h3 class="text-2xl font-bold mt-1">SMK Al Irsyad Al Islamiyyah</h3>
+                    <p class="text-gray-500 font-medium italic text-sm mb-2">Jurusan: Teknik Sepeda Motor</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">Mempelajari mekanika tingkat lanjut, sistem injeksi, dan manajemen bengkel profesional.</p>
+                </div>
+            </div>
+
+            <!-- MTs -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gold text-white z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg">
+                    <i class="fas fa-graduation-cap text-xs"></i>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 bg-white rounded-2xl shadow-sm border-l-4 border-gold card-hover">
+                    <span class="text-gold font-bold text-sm">2020 — 2023</span>
+                    <h3 class="text-2xl font-bold mt-1">MTs Al Irsyad</h3>
+                    <p class="text-gray-500 font-medium italic text-sm mb-2">Pendidikan Menengah Pertama</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">Fokus pada pendidikan agama dan akademik menengah yang membentuk karakter disiplin.</p>
+                </div>
+            </div>
+
+            <!-- MI -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gold text-white z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-lg">
+                    <i class="fas fa-book-open text-xs"></i>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 bg-white rounded-2xl shadow-sm border-l-4 border-gold card-hover">
+                    <span class="text-gold font-bold text-sm">2014 — 2020</span>
+                    <h3 class="text-2xl font-bold mt-1">MI Al Irsyad</h3>
+                    <p class="text-gray-500 font-medium italic text-sm mb-2">Pendidikan Dasar</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">Membangun fondasi pengetahuan dan etika moral sejak usia dini.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="contact" class="py-24 bg-black text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/batik-fractal.png')]"></div>
+        <div class="relative z-10 px-6">
+            <h2 class="text-4xl font-serif mb-6">Mari Terkoneksi</h2>
+            <p class="text-gray-400 mb-12 max-w-xl mx-auto">Tertarik untuk berdiskusi mengenai otomotif atau proyek menarik lainnya? Jangan ragu untuk menghubungi saya melalui platform di bawah ini.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+                <!-- Instagram -->
+                <a href="https://instagram.com/dimasrayhan38" target="_blank" class="p-8 bg-white/5 border border-white/10 rounded-2xl social-btn group">
+                    <i class="fab fa-instagram text-4xl text-gold mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-lg font-bold">Instagram</h4>
+                    <p class="text-gray-400 text-sm mt-1">@dimasrayhan38</p>
+                </a>
+                
+                <!-- WhatsApp -->
+                <a href="https://wa.me/6285171126833" target="_blank" class="p-8 bg-white/5 border border-white/10 rounded-2xl social-btn group">
+                    <i class="fab fa-whatsapp text-4xl text-gold mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-lg font-bold">WhatsApp</h4>
+                    <p class="text-gray-400 text-sm mt-1">+62 851-7112-6833</p>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:dimasrayhan@example.com" class="p-8 bg-white/5 border border-white/10 rounded-2xl social-btn group">
+                    <i class="far fa-envelope text-4xl text-gold mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h4 class="text-lg font-bold">Email</h4>
+                    <p class="text-gray-400 text-sm mt-1">Kirim Pesan</p>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#1a120b] text-white py-16 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center md:text-left items-center">
-            <div>
-                <div class="flex items-center justify-center md:justify-start space-x-4 mb-4">
-                    <img src="https://simangu.smksalirsyad-hgl.sch.id/apimangu/uploads/siswa/232410011/1773133945_fdd353bd.jpeg" alt="Logo Dimas" class="w-16 h-16 rounded-full object-cover border-2 border-amber-800">
-                    <h2 class="text-3xl font-serif font-bold tracking-tighter text-white uppercase">DIMAS</h2>
-                </div>
-                <p class="text-gray-400 leading-relaxed mb-6">Menyajikan kenyamanan dan rasa terbaik untuk setiap pelanggan kami di Desa Sumbermulya.</p>
-                <div class="flex justify-center md:justify-start space-x-5 text-xl">
-                    <a href="#" class="w-10 h-10 bg-white/5 flex items-center justify-center rounded-full hover:bg-amber-700 transition"><i class="fab fa-instagram text-white text-sm"></i></a>
-                    <a href="#" class="w-10 h-10 bg-white/5 flex items-center justify-center rounded-full hover:bg-amber-700 transition"><i class="fab fa-facebook-f text-white text-xs"></i></a>
-                    <a href="#" class="w-10 h-10 bg-white/5 flex items-center justify-center rounded-full hover:bg-amber-700 transition"><i class="fab fa-tiktok text-white text-xs"></i></a>
-                </div>
+    <footer class="py-10 bg-white border-t border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 text-sm">© 2024 Dimas Rayhan. Seluruh hak cipta dilindungi.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0 items-center">
+                <a href="https://instagram.com/dimasrayhan38" target="_blank" class="text-gray-400 hover:text-gold transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/6285171126833" target="_blank" class="text-gray-400 hover:text-gold transition-colors"><i class="fab fa-whatsapp"></i></a>
+                <div class="h-4 w-px bg-gray-200"></div>
+                <span class="italic font-serif text-gold text-sm">Al Irsyad Al Islamiyyah</span>
             </div>
-            <div class="flex flex-col space-y-4">
-                <h4 class="font-bold text-lg mb-2 text-white">Tautan Cepat</h4>
-                <a href="#home" class="text-gray-400 hover:text-white transition">Beranda</a>
-                <a href="#about" class="text-gray-400 hover:text-white transition">Tentang Kami</a>
-                <a href="#menu" class="text-gray-400 hover:text-white transition">Menu Pilihan</a>
-                <a href="#contact" class="text-gray-400 hover:text-white transition">Lokasi</a>
-            </div>
-            <div>
-                <h4 class="font-bold text-lg mb-4 text-white">Berlangganan Promo</h4>
-                <p class="text-sm text-gray-400 mb-4">Dapatkan info menu baru dan diskon khusus melalui email.</p>
-                <div class="flex overflow-hidden rounded-xl shadow-lg">
-                    <input type="email" placeholder="Email Anda" class="bg-white/10 px-4 py-3 outline-none flex-grow text-sm text-white">
-                    <button class="bg-coffee px-6 py-3 font-bold hover:bg-amber-900 transition text-sm text-white border-none cursor-pointer">Kirim</button>
-                </div>
-            </div>
-        </div>
-        <div class="border-t border-white/5 max-w-7xl mx-auto mt-16 pt-8 text-center text-gray-500 text-xs tracking-widest uppercase">
-            &copy; 2024 DIMAS CAFE & EATERY | <span class="text-gray-400 text-xs">SUMBERMULYA, JATIMULYA</span>
         </div>
     </footer>
 
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if(this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Observer untuk animasi
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
-  </html>                    
-                                
+</html>                                    
